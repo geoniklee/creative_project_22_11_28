@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세 페이지</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+
+    table.type08 {
+        border-collapse: collapse;
+        text-align: left;
+        line-height: 1.5;
+        border-left: 1px solid #ccc;
+        margin: 20px 10px;
+    }
+
+    table.type08 thead th {
+        padding: 10px;
+        font-weight: bold;
+        border-top: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 2px solid #c00;
+        background: #dcdcd1;
+    }
+
+    table.type08 tbody th {
+        width: 150px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        background: #ececec;
+    }
+
+    table.type08 td {
+        width: 350px;
+        padding: 10px;
+        vertical-align: top;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    table.table2 {
+        border-collapse: separate;
+        border-spacing: 1px;
+        text-align: left;
+        line-height: 1.5;
+        border-top: 1px solid #ccc;
+        margin: 20px 10px;
+    }
+
+    table.table2 tr {
+        width: 300px;
+        padding: 50px;
+        font-weight: bold;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+    }
+
+    table.table2 td {
+        width: 500px;
+        padding: 50px;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+    }
+
+</style>
+
+<body>
+
+
+<div class="layout" style="float:left;">
+    <h5 class="my-3 border-bottom pb-2"></h5>
+    <form action="/board/writepro" method="post" enctype="multipart/form-data">
+        <table class="type08">
+            <thead>
+            <tr>
+                <th scope="cols">제목</th>
+                <td th:text="${board.title}">제목입니다.</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">내용</th>
+                <td th:text="${board.content}">내용이 들어갈 부분입니다.</td>
+            </tr>
+            <tr>
+                <th scope="row">Content</th>
+                <td><a th:href="@{${board.filepath}}">원본 사진보기</a></td>
+            </tr>
+            <tr>
+                <th scope="row">Content</th>
+                <td><a th:href="@{${board.filepath2}}">스타일 사진보기</a></td>
+            </tr>
+
+            <tr>
+                <th scope="row">Output</th>
+                <td><a th:href="@{${board.output}}">결과물 사진보기</a></td>
+            </tr>
+            </tbody>
+
+        </table>
+
+    </form>
+    <div4 style="text-align: center">
+        <div>
+            <div1>
+                <img class="layout" th:src="@{${board.filepath}}" style="margin-top: 20px; margin-left: 20px; overflow: hidden;"><img>
+            </div1>
+            <div2>
+                <img class="layout" th:src="@{${board.filepath2}}" style="margin-left: 20px; margin-top: 40px; overflow: hidden;"><img>
+            </div2>
+        </div>
+        <div3>
+            <img class="layout2" th:src="@{${board.filepath}}"><img>
+        </div3>
+    </div4>
+</div>
+
+</body>
+</html>
+
+
+</body>
+<style>
+    .layout {
+        width: 200px;
+        height: 200px;
+    }
+
+    .layout2 {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        position: absolute;
+        top: 490px;
+        left: 490px;
+    }
+</style>
+</html>
